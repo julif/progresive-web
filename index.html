@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<!--    <title>web-app_template</title> -->
+<!--   <meta charset="utf-8"> --> <!-- permite la ñ -->
+   <meta name="viewport" content="width=device-width,  initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+   <meta charset="utf-8"/>
+    <title>Mi Página Web</title>
+
+  <!--  <link rel="manifest" href="/manifest.json"> -->
+    <link rel="manifest" href="manifest.json">
+
+<!-- <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="web-app ">
+<meta name="apple-mobile-web-app-title" content="web-app ">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+
+
+
+
+</head>
+<body>
+ " hola mundo"
+</body> 
+<script type="text/javascript">
+  
+  if (navigator.serviceWorker) {
+  navigator.serviceWorker.register('/src/sw.js').then(function(registration) {
+    console.log('ServiceWorker registration successful with scope:',  registration.scope);
+  }).catch(function(error) {
+    console.log('ServiceWorker registration failed:', errror);
+  });
+}
+</script>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "webapp",
+  "short_name": "wp",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "Scope": "/",
+  "start_url": "index.html?launcher=true",
+  "icons": null,
+  "splash_pages": null
+}
