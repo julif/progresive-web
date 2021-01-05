@@ -123,6 +123,10 @@
     bottom: 0px;
     right: 0px;
   }
+  #ad2hs-close {
+    top: 0px;
+    right: 5px;
+  }
 }
 </style>
 
@@ -141,8 +145,8 @@
       <div id="ad2hs-logo-container"> <img src="img/apple-touch-icon-60x60.png"> </div> 
       <div id="ad2hs-name-description-container"> 
         <div id="ad2hs-close"> <i  style="color: #b7b6b6" class="fas fa-times"></i> </div>
-        <b><p> Julifweb </p></b>
-        <p style="color: #b7b6b6;font-size: 15px;"> Julifweb.com </p>
+        <b><p> Webapp </p></b>
+        <p style="color: #b7b6b6;font-size: 15px;"> Julif.github.com </p>
       </div> 
     </div> 
      <div id="ad2hs-prompt-container-footer"> <button id="ad2hs-button">Add to home screen</button> </div> 
@@ -179,7 +183,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   showAddToHomeScreen();
 
 
-  addBtn.addEventListener('click', (e) => {
+/*   addBtn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
     addBtn.style.display = 'none';
     // Show the prompt
@@ -193,7 +197,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
         }
         deferredPrompt = null;
       });
-  });
+  }); */
 
   ad2hs_btn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
@@ -222,6 +226,12 @@ var a2hsBtn = document.querySelector(".ad2hs-prompt");
 a2hsBtn.style.display = "block";
 
 a2hsBtn.addEventListener("click", addToHomeScreen);
+
+
+
+a2hsBtn.style.display = "block";
+
+a2hsBtn.addEventListener("click", addToHomeScreen)
 
 
 
