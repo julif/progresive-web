@@ -11,6 +11,14 @@
   <!--  <link rel="manifest" href="/manifest.json"> -->
     <link rel="manifest" href="manifest.json">
 
+
+
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 <!-- <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="application-name" content="web-app ">
@@ -80,19 +88,26 @@
     font-size: 20px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    position: absolute;
+    /* position: absolute; */
+    position: fixed;
     bottom: 10px;
     right: 10px;
 
    
-    display: none;
+     display: none; 
     /* display: none; */
+   
+  animation-duration: 0.7s; /* don't forget to set a duration! */
+
+
 }
 #ad2hs-prompt-container-content{ display: flex; position: relative;}
 #ad2hs-close{ 
   position: absolute; 
   top: -5px;
-  right: 0px; 
+  right: 5px; 
+
+
   cursor: pointer; 
   /* background-color: red; */
  
@@ -128,29 +143,45 @@
     right: 5px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 
 </head>
 <body>
 
-<div id="ad2hs-prompt" class="ad2hs-prompt">add this app to your homescreen </div>
+<!-- <div id="ad2hs-prompt" class="ad2hs-prompt">add this app to your homescreen </div> -->
  " hola mundo"
 
- <button class="add-button">Add to home screen</button>
+ <!-- <button class="add-button">Add to home screen</button> -->
 
-
- <div id="ad2hs-prompt-container">
-    <div id="ad2hs-prompt-container-content"> 
-      <div id="ad2hs-logo-container"> <img src="img/apple-touch-icon-60x60.png"> </div> 
-      <div id="ad2hs-name-description-container"> 
-        <div id="ad2hs-close"> <i  style="color: #b7b6b6" class="fas fa-times"></i> </div>
-        <b><p> Webapp </p></b>
-        <p style="color: #b7b6b6;font-size: 15px;"> Julif.github.com </p>
-      </div> 
+ <div id="ad2hs-prompt-container"  class="animate__slideInUp">
+  <div id="ad2hs-prompt-container-content"> 
+    <div id="ad2hs-logo-container"> <img src="img/apple-touch-icon-60x60.png"> </div> 
+    <div id="ad2hs-name-description-container"> 
+      <div id="ad2hs-close"> <i  style="color: #b7b6b6" class="fas fa-times"></i> </div>
+      <b><p> Webapp </p></b>
+      <p style="color: #b7b6b6;font-size: 15px;"> Julif.github.com </p>
     </div> 
-     <div id="ad2hs-prompt-container-footer"> <button id="ad2hs-button">Add to home screen</button> </div> 
   </div> 
+   <div id="ad2hs-prompt-container-footer"> <button id="ad2hs-button">Add to home screen</button> </div> 
+</div> 
+
 
 </body> 
 
@@ -168,8 +199,8 @@ ad2hs_close_btn.addEventListener('click', (e) => {
 
 
 let deferredPrompt;
-const addBtn = document.querySelector('.add-button');
-addBtn.style.display = 'none';
+// const addBtn = document.querySelector('.add-button');
+// addBtn.style.display = 'none';
 </script>
 <script>
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -178,8 +209,14 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI to notify the user they can add to home screen
-  addBtn.style.display = 'block';
-  ad2hs_prompt_container.style.display = 'block';
+  // addBtn.style.display = 'block';
+
+
+  //ad2hs_prompt_container.style.display = 'block';
+  setTimeout(function(){ ad2hs_prompt_container.style.display = 'block'; }, 3000);
+
+
+
   showAddToHomeScreen();
 
 
@@ -219,27 +256,27 @@ window.addEventListener('beforeinstallprompt', (e) => {
 </script>
 <script>
 
-function showAddToHomeScreen() {
+// function showAddToHomeScreen() {
 
-var a2hsBtn = document.querySelector(".ad2hs-prompt");
+// // var a2hsBtn = document.querySelector(".ad2hs-prompt");
 
-a2hsBtn.style.display = "block";
+// a2hsBtn.style.display = "block";
 
-a2hsBtn.addEventListener("click", addToHomeScreen);
-
-
-
-a2hsBtn.style.display = "block";
-
-a2hsBtn.addEventListener("click", addToHomeScreen)
+// a2hsBtn.addEventListener("click", addToHomeScreen);
 
 
 
-}
+// a2hsBtn.style.display = "block";
+
+// a2hsBtn.addEventListener("click", addToHomeScreen)
 
 
 
-function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
+// }
+
+
+
+/* function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
   a2hsBtn.style.display = 'none';  // Show the prompt
   deferredPrompt.prompt();  // Wait for the user to respond to the prompt
   deferredPrompt.userChoice
@@ -253,7 +290,19 @@ function addToHomeScreen() {  var a2hsBtn = document.querySelector(".ad2hs-promp
 
   deferredPrompt = null;
 
-});}
+});} */
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 </html>
