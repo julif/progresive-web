@@ -168,7 +168,7 @@
 <!-- <div id="ad2hs-prompt" class="ad2hs-prompt">add this app to your homescreen </div> -->
  " hola mundo"
 
- <!-- <button class="add-button">Add to home screen</button> -->
+<button class="add-button">Add to home screen</button> 
 
  <div id="ad2hs-prompt-container"  class="animate__slideInUp">
   <div id="ad2hs-prompt-container-content"> 
@@ -199,8 +199,8 @@ ad2hs_close_btn.addEventListener('click', (e) => {
 
 
 let deferredPrompt;
-// const addBtn = document.querySelector('.add-button');
-// addBtn.style.display = 'none';
+ const addBtn = document.querySelector('.add-button');
+ addBtn.style.display = 'none';
 </script>
 <script>
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -209,7 +209,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI to notify the user they can add to home screen
-  // addBtn.style.display = 'block';
+   addBtn.style.display = 'block';
 
 
   //ad2hs_prompt_container.style.display = 'block';
@@ -220,7 +220,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   //showAddToHomeScreen();
 
 
-/*   addBtn.addEventListener('click', (e) => {
+   addBtn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
     addBtn.style.display = 'none';
     // Show the prompt
@@ -234,7 +234,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
         }
         deferredPrompt = null;
       });
-  }); */
+  }); 
 
   ad2hs_btn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
