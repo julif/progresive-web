@@ -62,19 +62,28 @@
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
    margin: 0px auto;
   }
+  #ad2hs-button{
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
 </style>
 </head>
 <body>
  " hola mundo"
 
-<button class="add-button">Add to home screen</button> 
+<button  id="ad2hs-button" >Add to home screen</button> 
 
 </body> 
 
 <script>
 let deferredPrompt;
- const addBtn = document.querySelector('.add-button');
- addBtn.style.display = 'none';
+
+ const ad2hs_btn = document.querySelector('#ad2hs-button');
+ ad2hs_btn.style.display = 'none';
 </script>
 <script>
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -86,14 +95,14 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 
   // addBtn.style.display = 'block';
-  setTimeout(function(){  addBtn.style.display = 'block'; }, 3000);
+  setTimeout(function(){  ad2hs_btn.style.display = 'block'; }, 3000);
 
   //showAddToHomeScreen();
 
 
-   addBtn.addEventListener('click', (e) => {
+  ad2hs_btn.addEventListener('click', (e) => {
     // hide our user interface that shows our A2HS button
-    addBtn.style.display = 'none';
+    ad2hs_btn.style.display = 'none';
     // Show the prompt
     deferredPrompt.prompt();
     // Wait for the user to respond to the prompt
