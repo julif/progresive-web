@@ -1,13 +1,12 @@
 {
-  "name": "webapp",
-  "short_name": "wp",
-  "theme_color": "#111c29",
-  "background_color": "#2196f3",
+  "name": " Progresive webapp",
+  "short_name": "webapp",
+  "theme_color": "#020b12",
+  "background_color": "#020b12",
   "display": "fullscreen",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "index.html?launcher=true",
-  // "icons": null,
   "icons": [{
     "src": "img/apple-touch-icon-120x120.png",
     "sizes": "128x128",
